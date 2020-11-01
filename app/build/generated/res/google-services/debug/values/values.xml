@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">176177523417-fu1qchfq7u6i9qskqvd91q9qllal40jf.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://hello-nini-chat.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">176177523417</string>
+    <string name="google_api_key" translatable="false">AIzaSyAVK-28I3W7v2rNWbrOVHKBeplRUHNm_8Q</string>
+    <string name="google_app_id" translatable="false">1:176177523417:android:9b44162aba12f9e589ecc8</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyAVK-28I3W7v2rNWbrOVHKBeplRUHNm_8Q</string>
+    <string name="google_storage_bucket" translatable="false">hello-nini-chat.appspot.com</string>
+    <string name="project_id" translatable="false">hello-nini-chat</string>
+</resources>
