@@ -1,18 +1,7 @@
 <resources>
-    <string name="app_name">EduChat</string>
-    <string name="login_hint_email">Email</string>
-    <string name="login_error_email_empty">Email cannot be empty</string>
-    <string name="login_hint_username">Username</string>
-    <string name="login_hint_password">Password</string>
-    <string name="login_error_username_empty">User name cannot be empty</string>
-    <string name="login_error_password_empty">Password cannot be empty</string>
-    <string name="login">Login</string>
-    <string name="login_forgot_password">Forgot Password? </string>
-    <string name="login_register">Don\'t have an account? Register here</string>
-    <string name="login_progress_message_authenticating">Authenticating…</string>
-    <string name="login_auth_fail_message">Login failed. Please try again.</string>
-    <string name="register">Register</string>
-    <string name="user_register_hint_confirm_password">Confirm Password</string>
-    <string name="user_register_registering_msg">Registering…</string>
-    <string name="create_profile_username_title">Email: </string>
+    <string name="app_name">Edu_Chat</string>
+    <string name="description_info">Select a model</string>
+    <string name="request_permission">This sample needs camera permission.</string>
+    <string name="camera_error">This device doesn\'t support Camera2 API.</string>
+    <string name="select">Select</string>
 </resources>

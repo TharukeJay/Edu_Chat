@@ -4,40 +4,57 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ChatModule.LoginActivity"
-    android:background="@color/colorPrimary">
+    android:background="@color/colorPrimary"
+    tools:context=".ChatModule.RegisterActivity">
 
-    <include
-        android:id="@+id/toolbar"
-        layout="@layout/bar_layout"/>
+    <!--    <include-->
+    <!--        android:id="@+id/toolbar"-->
+    <!--        layout="@layout/bar_layout"/>-->
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:padding="16dp"
         android:gravity="center_horizontal"
         android:layout_below="@+id/toolbar">
-
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="EduChat"
             android:layout_centerHorizontal="true"
-            android:text="Login"
-            android:textColor="@color/secondaryTextColor"
             android:layout_marginTop="50dp"
+            android:textColor="@color/secondaryTextColor"
+            android:textSize="50sp"
             android:textStyle="bold"/>
 
         <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/username"
+            android:drawableLeft="@drawable/ic_login_user_name"
+            android:drawablePadding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="Username"
+            android:drawableTint="@color/secondaryTextColor"
+            android:singleLine="true"
+            android:textColor="@color/secondaryTextColor"
+            android:textColorHint="@color/secondaryTextColor"
+            app:met_floatingLabel="normal"
+            />
+
+
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/email"
-            android:inputType="textEmailAddress"
             android:drawableLeft="@drawable/ic_login_user_name"
-
+            android:inputType="textEmailAddress"
             android:layout_marginTop="10dp"
-            app:met_floatingLabel="normal"
-            android:hint="Email" />
+            android:drawableTint="@color/secondaryTextColor"
+
+            android:hint="Email"/>
 
         <com.rengwuxian.materialedittext.MaterialEditText
             android:layout_width="match_parent"
@@ -51,35 +68,12 @@
 
         <Button
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/btn_login"
-            android:text="login"
+            android:layout_height="40dp"
+            android:id="@+id/btn_register"
+            android:text="register"
             android:background="@drawable/button_background"
-            android:textColor="@color/secondaryTextColor"
-            android:layout_marginTop="10dp"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Forgot you password?"
-            android:layout_marginTop="10dp"
-            android:layout_gravity="center"
-            android:textStyle="bold"
-            android:id="@+id/forgot_password"
-            android:textColor="@color/secondaryTextColor"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Don't have an account? Register here"
-            android:layout_marginTop="10dp"
-            android:layout_gravity="center"
-            android:textStyle="bold"
-            android:id="@+id/reg_user"
-            android:textColor="@color/secondaryTextColor"/>
+            android:textColor="@color/secondaryTextColor" />
+        />
 
 
     </LinearLayout>

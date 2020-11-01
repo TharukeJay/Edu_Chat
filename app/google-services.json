@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "840981435956",
-    "firebase_url": "https://educhat-5088e.firebaseio.com",
-    "project_id": "educhat-5088e",
-    "storage_bucket": "educhat-5088e.appspot.com"
+    "project_number": "176177523417",
+    "firebase_url": "https://hello-nini-chat.firebaseio.com",
+    "project_id": "hello-nini-chat",
+    "storage_bucket": "hello-nini-chat.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:840981435956:android:b64a473d54a9c21a5a5c61",
+        "mobilesdk_app_id": "1:176177523417:android:9b44162aba12f9e589ecc8",
         "android_client_info": {
-          "package_name": "com.tharuke.educhat"
+          "package_name": "com.nishan.hello_nini_chat"
         }
       },
       "oauth_client": [
         {
-          "client_id": "840981435956-b69ue8jh6s7dqppoma374u8qcd2cmbuo.apps.googleusercontent.com",
+          "client_id": "176177523417-fu1qchfq7u6i9qskqvd91q9qllal40jf.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDzB3_LpkVWolZQPuI1ohRU5zD_Ro5u5uU"
+          "current_key": "AIzaSyAVK-28I3W7v2rNWbrOVHKBeplRUHNm_8Q"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "840981435956-b69ue8jh6s7dqppoma374u8qcd2cmbuo.apps.googleusercontent.com",
+              "client_id": "176177523417-fu1qchfq7u6i9qskqvd91q9qllal40jf.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
