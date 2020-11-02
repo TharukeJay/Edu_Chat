@@ -24,24 +24,27 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:text="Login"
+            android:textSize="40dp"
             android:textColor="@color/secondaryTextColor"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="40dp"
             android:textStyle="bold"/>
 
         <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/email"
-            android:inputType="textEmailAddress"
-            android:drawableLeft="@drawable/ic_login_user_name"
-
             android:layout_marginTop="10dp"
-            app:met_floatingLabel="normal"
-            android:hint="Email" />
+            android:drawableLeft="@drawable/ic_login_user_name"
+            android:hint="Email"
+            android:textSize="30dp"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/secondaryTextColor"
+            app:met_floatingLabel="normal" />
 
         <com.rengwuxian.materialedittext.MaterialEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/secondaryTextColor"
             android:drawableLeft="@drawable/ic_login_password"
             android:id="@+id/password"
             android:inputType="textPassword"

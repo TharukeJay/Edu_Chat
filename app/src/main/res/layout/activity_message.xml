@@ -30,7 +30,7 @@
                 android:layout_height="match_parent"
                 android:id="@+id/username"
                 android:layout_marginLeft="25dp"
-                android:textColor="#fff"
+                android:textColor="@color/secondaryTextColor"
                 android:textStyle="bold"
                 android:layout_marginStart="25dp"/>
 

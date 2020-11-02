@@ -29,7 +29,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/username"
                 android:layout_marginLeft="25dp"
-                android:textColor="#fff"
+                android:textColor="@color/secondaryTextColor"
                 android:textStyle="bold"
                 android:text="username "
                 android:layout_marginStart="25dp"/>

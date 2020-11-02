@@ -21,7 +21,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Profile"
-                android:textColor="@color/secondaryTextColor"
+                android:textColor="@color/primaryColor"
                 android:textSize="30dp"
                 android:textStyle="bold" />
 
@@ -42,15 +42,47 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="20dp"
                 android:text="username"
-                android:textColor="@color/secondaryTextColor"
+                android:textColor="@color/colorPrimary"
                 android:textSize="18sp"
                 android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="200dp"
+                android:hint="Gender"
+                android:text="TextView"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@+id/radioButton2"
+                android:layout_marginTop="220dp"
+                android:hint="Male"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RadioButton" />
+            <RadioButton
+                android:id="@+id/radioButton3"
+                android:layout_marginTop="220dp"
+                android:hint="Female"
+                android:layout_marginLeft="130dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RadioButton" />
+            <RadioButton
+                android:id="@+id/radioButton4"
+                android:layout_marginTop="220dp"
+                android:hint="Other"
+                android:layout_marginLeft="250dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RadioButton" />
 
 
         </RelativeLayout>
 
     </android.support.v7.widget.CardView>
-
 
 
 </RelativeLayout>
