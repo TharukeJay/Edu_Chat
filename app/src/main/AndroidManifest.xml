@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.nishan.hello_nini_chat">
+    package="com.tharuke.Edu_Chat">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -26,32 +26,25 @@
 <!--        </activity>-->
 
         <activity
-            android:name=".ChatModule.MainActivity"
-            android:configChanges="orientation|screenSize"
-            android:screenOrientation="portrait"
-            android:label="@string/app_name">
-        </activity>
-
-        <activity
-            android:name=".ChatModule.RegisterActivity"
+            android:name=".chatModule.ChatModule.RegisterActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait"
             android:label="@string/app_name">
         </activity>
         <activity
-            android:name=".ChatModule.LoginActivity"
+            android:name=".chatModule.ChatModule.LoginActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait"
             android:label="@string/app_name">
         </activity>
         <activity
-            android:name=".ChatModule.MessageActivity"
+            android:name=".chatModule.ChatModule.MessageActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait"
             android:label="@string/app_name">
         </activity>
         <activity
-            android:name=".ChatModule.ResetPasswordActivity"
+            android:name=".chatModule.ChatModule.ResetPasswordActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait"
             android:label="@string/app_name">
@@ -63,13 +56,13 @@
 <!--            android:label="@string/app_name">-->
 <!--        </activity>-->
         <activity
-            android:name=".ChatModule.StartActivity"
+            android:name=".chatModule.ChatModule.StartActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait"
             android:label="@string/app_name">
         </activity>
         <activity
-            android:name=".ChatModule.SplashScreenActivity"
+            android:name=".chatModule.ChatModule.SplashScreenActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait"
             android:label="@string/app_name">

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context=".ChatModule.RegisterActivity">
+    tools:context=".chatModule.ChatModule.RegisterActivity">
 
     <!--    <include-->
     <!--        android:id="@+id/toolbar"-->
@@ -45,15 +45,14 @@
             />
 
 
-        <EditText
+        <com.rengwuxian.materialedittext.MaterialEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/email"
+            android:id="@+id/regEmail"
             android:drawableLeft="@drawable/ic_login_user_name"
             android:inputType="textEmailAddress"
             android:layout_marginTop="10dp"
             android:drawableTint="@color/secondaryTextColor"
-
             android:hint="Email"/>
 
         <com.rengwuxian.materialedittext.MaterialEditText

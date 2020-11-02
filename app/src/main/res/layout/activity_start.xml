@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:background="@color/colorPrimary"
-    tools:context=".ChatModule.StartActivity"
+    tools:context=".chatModule.ChatModule.StartActivity"
     android:orientation="vertical">
 
     <TextView
