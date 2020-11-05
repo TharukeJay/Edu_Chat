@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="default_web_client_id" translatable="false">176177523417-fu1qchfq7u6i9qskqvd91q9qllal40jf.apps.googleusercontent.com</string>
-    <string name="firebase_database_url" translatable="false">https://hello-nini-chat.firebaseio.com</string>
-    <string name="gcm_defaultSenderId" translatable="false">176177523417</string>
-    <string name="google_api_key" translatable="false">AIzaSyAVK-28I3W7v2rNWbrOVHKBeplRUHNm_8Q</string>
-    <string name="google_app_id" translatable="false">1:176177523417:android:9b44162aba12f9e589ecc8</string>
-    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyAVK-28I3W7v2rNWbrOVHKBeplRUHNm_8Q</string>
-    <string name="google_storage_bucket" translatable="false">hello-nini-chat.appspot.com</string>
-    <string name="project_id" translatable="false">hello-nini-chat</string>
+    <string name="default_web_client_id" translatable="false">840981435956-b69ue8jh6s7dqppoma374u8qcd2cmbuo.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://educhat-5088e.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">840981435956</string>
+    <string name="google_api_key" translatable="false">AIzaSyDzB3_LpkVWolZQPuI1ohRU5zD_Ro5u5uU</string>
+    <string name="google_app_id" translatable="false">1:840981435956:android:41f1a0616a5d13425a5c61</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDzB3_LpkVWolZQPuI1ohRU5zD_Ro5u5uU</string>
+    <string name="google_storage_bucket" translatable="false">educhat-5088e.appspot.com</string>
+    <string name="project_id" translatable="false">educhat-5088e</string>
 </resources>

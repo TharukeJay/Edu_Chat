@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar toolbar= findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("");
+//        getSupportActionBar().setTitle("");
 
 
         profile_image = findViewById(R.id.profile_image);
