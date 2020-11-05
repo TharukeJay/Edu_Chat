@@ -55,12 +55,11 @@
         android:layout_alignParentBottom="true">
 
         <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
             android:id="@+id/text_send"
             android:background="@android:color/transparent"
             android:hint="Type a messgae.."
-            android:layout_toLeftOf="@+id/btn_gallery"
             android:layout_centerVertical="true"/>
 
 
@@ -76,29 +75,11 @@
             android:id="@+id/send_file_btn"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
             android:layout_marginStart="246dp"
-            android:layout_toLeftOf="@id/btn_gallery"
+            android:layout_toLeftOf="@id/btn_send"
             android:background="@drawable/send_file_btn" />
 
-        <ImageButton
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="@drawable/gallery_button_icon"
-            android:id="@+id/btn_gallery"
-            android:layout_centerVertical="true"
-            android:layout_toLeftOf="@id/btn_camera"
-            />
-
-        <ImageButton
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="@drawable/camera_button_icon"
-            android:id="@+id/btn_camera"
-            android:layout_centerVertical="true"
-            android:layout_toLeftOf="@id/btn_send"
-            />
 
         <ImageButton
             android:layout_width="40dp"

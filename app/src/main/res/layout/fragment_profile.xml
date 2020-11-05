@@ -51,33 +51,30 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="200dp"
-                android:hint="Gender"
-                android:text="TextView"
+                android:text="Gender"
                 android:textStyle="bold" />
 
             <RadioButton
                 android:id="@+id/radioButton2"
                 android:layout_marginTop="220dp"
-                android:hint="Male"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="RadioButton" />
+                android:text="Male" />
             <RadioButton
                 android:id="@+id/radioButton3"
                 android:layout_marginTop="220dp"
-                android:hint="Female"
-                android:layout_marginLeft="130dp"
+                android:layout_marginLeft="140dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="RadioButton" />
+                android:text="Female" />
+
             <RadioButton
                 android:id="@+id/radioButton4"
-                android:layout_marginTop="220dp"
-                android:hint="Other"
-                android:layout_marginLeft="250dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="RadioButton" />
+                android:layout_marginLeft="270dp"
+                android:layout_marginTop="220dp"
+                android:text="Other" />
 
 
         </RelativeLayout>

@@ -80,7 +80,7 @@ public class MessageActivity extends AppCompatActivity {
     FirebaseUser fuser;
     DatabaseReference reference;
 
-    ImageButton btn_camera, btn_send, btn_gallery, btn_file_send;
+    ImageButton btn_send,btn_file_send;
     EditText text_send;
 
     MessageAdapter messageAdapter;
@@ -137,9 +137,7 @@ public class MessageActivity extends AppCompatActivity {
         profile_image = findViewById(R.id.profile_image);
         username = findViewById(R.id.username);
         btn_send = findViewById(R.id.btn_send);
-        btn_camera = findViewById(R.id.btn_camera);
         text_send = findViewById(R.id.text_send);
-        btn_gallery = findViewById(R.id.btn_gallery);
         mListView = findViewById(R.id.material_listview);
         btn_file_send = findViewById(R.id.send_file_btn);
 
