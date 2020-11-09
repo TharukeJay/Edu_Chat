@@ -24,6 +24,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.tharuke.Edu_Chat.R;
+import com.tharuke.Edu_Chat.chatModule.Fragments.ChatRoomFragment;
 import com.tharuke.Edu_Chat.chatModule.Fragments.ProfileFragment;
 import com.tharuke.Edu_Chat.chatModule.Fragments.UsersFragment;
 import com.tharuke.Edu_Chat.chatModule.Model.User;
@@ -81,8 +82,8 @@ public class MainActivity extends AppCompatActivity {
 
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
 
-        viewPagerAdapter.addFragment(new UsersFragment(),"Users");
-        viewPagerAdapter.addFragment(new UsersFragment(),"Group Chat");
+        viewPagerAdapter.addFragment(new UsersFragment(),"Chats");
+        viewPagerAdapter.addFragment(new ChatRoomFragment(),"Group Chat");
         viewPagerAdapter.addFragment(new ProfileFragment(),"Profile");
 
         viewPager.setAdapter(viewPagerAdapter);

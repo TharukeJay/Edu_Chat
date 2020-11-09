@@ -58,12 +58,9 @@ public class MessageActivity extends AppCompatActivity {
     private Uri fileUri;
     private ProgressDialog loadingBar;
 
-    private static final int RESULT_LOAD_IMG = 1;
     private static final int LAUNCH_MAIN_ACTIVITY = 2;
 
-    private static final String tfModel = "fer2013_mini_XCEPTION.102-0.66.pb";
 
-    private static final int REQUEST_CODE_PERMISSION = 2;
 
     private static String[] PERMISSIONS_REQ = {
             Manifest.permission.READ_EXTERNAL_STORAGE,
@@ -72,10 +69,9 @@ public class MessageActivity extends AppCompatActivity {
     };
 
     protected MaterialListView mListView;
-    protected String mTestImgPath;
 
     CircleImageView profile_image;
-    TextView username, mPredict;
+    TextView username;
 
     FirebaseUser fuser;
     DatabaseReference reference;
@@ -89,7 +85,6 @@ public class MessageActivity extends AppCompatActivity {
     RecyclerView recyclerView;
 
     Intent intent;
-    String userid;
 
     ValueEventListener seenListener;
 
@@ -97,12 +92,7 @@ public class MessageActivity extends AppCompatActivity {
 
     public Bundle bundle = new Bundle();
 
-    String class_name_new = "";
     private DatabaseReference RootRef;
-
-
-//    @ViewById(R.id.btn_camera)
-//    protected ImageButton Btn_camera;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -120,7 +110,6 @@ public class MessageActivity extends AppCompatActivity {
 //        setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-//        saveModel();
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -145,33 +134,6 @@ public class MessageActivity extends AppCompatActivity {
         final String userid = intent.getStringExtra("userid");
         fuser = FirebaseAuth.getInstance().getCurrentUser();
         System.out.println("firebase current user ===> " + fuser);
-
-
-//        btn_camera.setOnClickListener(view -> {
-//
-//            Intent intent = new Intent(this, MainActivity_.class);
-//            Bundle b = new Bundle();
-//            b.putString("btnCamera", "camera");
-//            intent.putExtras(b);
-//            startActivityForResult(intent, LAUNCH_MAIN_ACTIVITY);
-//        });
-//        @Override
-//        protected void onActivityResult(int requestCode,int resultCode,Intent data){
-//            super.onActivityResult(requestCode,resultCode,data);
-//            if(requestCode == RESULT_OK){
-//                Bitmap b = (Bitmap)data.getExtras().get("data");
-//                myImage.setImagebitmap(b);
-//            }
-//        }
-
-//        btn_gallery.setOnClickListener(view -> {
-//
-//            Intent intent = new Intent(this, MainActivity_.class);
-////            Bundle b = new Bundle();
-////            b.putString("btnGallery", "gallery");
-////            intent.putExtras(b);
-//            startActivityForResult(intent, LAUNCH_MAIN_ACTIVITY);
-//        });
 
         btn_send.setOnClickListener(view -> {
 
@@ -200,10 +162,6 @@ public class MessageActivity extends AppCompatActivity {
                 if (i == 0) {
                     checker = "image";
 
-//                    Intent intent = new Intent();
-//                    intent.setAction(Intent.ACTION_GET_CONTENT);
-//                    intent.setType("image/*");
-//                    startActivityForResult(Intent.createChooser(intent, "Select Image"), 438);
                 }
                 if (i == 1) {
                     checker = "pdf";
@@ -274,22 +232,6 @@ public class MessageActivity extends AppCompatActivity {
         hashMap.put("isseen", false);
 
         reference.child("Chats").push().setValue(hashMap);
-//        final DatabaseReference chatRef = FirebaseDatabase.getInstance().getReference("Chatlist")
-//               .child(fuser.getUid())
-//               .child(userid);
-//       chatRef.addListenerForSingleValueEvent(new ValueEventListener() {
-//           @Override
-//           public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                if(!dataSnapshot.exists()){
-//                    chatRef.child("id").setValue(userid);
-//                }
-//           }
-//
-//           @Override
-//           public void onCancelled(@NonNull DatabaseError databaseError) {
-//
-//           }
-//       });
 
     }
 

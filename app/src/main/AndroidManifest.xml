@@ -5,12 +5,11 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- Machine Learning part -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" /> <!-- CAMERA -->
+    <uses-permission android:name="android.permission.CAMERA" />
 
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
-    <!-- CAMERA -->
-    <uses-permission android:name="android.permission.CAMERA"/>
-    <uses-feature android:name="android.hardware.camera"/>
-    <uses-feature android:name="android.hardware.camera.autofocus"/>
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
 
     <application
         android:allowBackup="true"
@@ -18,58 +17,52 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".chatModule.ChatModule.ChatRoomActivity"></activity>
+        <activity android:name=".chatModule.Fragments.ChatRoomFragment" />
         <activity
             android:name=".chatModule.ChatModule.MainActivity"
             android:configChanges="orientation|screenSize"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
-
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".chatModule.ChatModule.RegisterActivity"
             android:configChanges="orientation|screenSize"
-            android:screenOrientation="portrait"
-            android:label="@string/app_name">
-        </activity>
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".chatModule.ChatModule.LoginActivity"
             android:configChanges="orientation|screenSize"
-            android:screenOrientation="portrait"
-            android:label="@string/app_name">
-        </activity>
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".chatModule.ChatModule.MessageActivity"
             android:configChanges="orientation|screenSize"
-            android:screenOrientation="portrait"
-            android:label="@string/app_name">
-        </activity>
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".chatModule.ChatModule.ResetPasswordActivity"
             android:configChanges="orientation|screenSize"
-            android:screenOrientation="portrait"
-            android:label="@string/app_name">
-        </activity>
-<!--        <activity-->
-<!--            android:name=".ChatModule.MessageActivity_"-->
-<!--            android:configChanges="orientation|screenSize"-->
-<!--            android:screenOrientation="portrait"-->
-<!--            android:label="@string/app_name">-->
-<!--        </activity>-->
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" /> <!-- <activity -->
+        <!-- android:name=".ChatModule.MessageActivity_" -->
+        <!-- android:configChanges="orientation|screenSize" -->
+        <!-- android:screenOrientation="portrait" -->
+        <!-- android:label="@string/app_name"> -->
+        <!-- </activity> -->
         <activity
             android:name=".chatModule.ChatModule.StartActivity"
             android:configChanges="orientation|screenSize"
-            android:screenOrientation="portrait"
-            android:label="@string/app_name">
-        </activity>
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".chatModule.ChatModule.SplashScreenActivity"
             android:configChanges="orientation|screenSize"
-            android:screenOrientation="portrait"
-            android:label="@string/app_name">
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>

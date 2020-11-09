@@ -3,6 +3,7 @@ package com.tharuke.Edu_Chat.chatModule.Model;
 public class Chatlist {
     public  String id;
 
+
     public Chatlist(String id){
 
         this.id = id;
