@@ -52,6 +52,7 @@ public class ChatRoomListAdapter extends RecyclerView.Adapter<ChatRoomListAdapte
         ChatRoomList chatRoomList = mChat.get(position);
 
         viewHolder.show_message.setText(chatRoomList.getMessage());
+        viewHolder.show_img_message.setVisibility(View.GONE);
 
 //        if(imageurl.equals("default")){
 //            viewHolder.profile_image.setImageResource(R.mipmap.ic_launcher);
@@ -69,13 +70,14 @@ public class ChatRoomListAdapter extends RecyclerView.Adapter<ChatRoomListAdapte
     public class ViewHolder extends RecyclerView.ViewHolder{
 
         public TextView show_message;
-//        public ImageView profile_image;
+        public ImageView show_img_message;
 
 
         public ViewHolder(View itemView){
             super(itemView);
 
             show_message = itemView.findViewById(R.id.show_message);
+            show_img_message =  itemView.findViewById(R.id.show_img_message);
 //            profile_image = itemView.findViewById(R.id.profile_image);
 
 
