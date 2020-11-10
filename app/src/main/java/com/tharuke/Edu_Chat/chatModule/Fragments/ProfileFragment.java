@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -77,7 +78,7 @@ public class ProfileFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 User user = dataSnapshot.getValue(User.class);
                 username.setText(user.getUsername());
-                if (user.getImageUrl().equals("default")){
+                if (user.getImageUrl().equals("default") || getContext() == null){
                     image_profile.setImageResource(R.mipmap.ic_launcher);
                 }else {
                     Glide.with(getContext()).load(user.getImageUrl()).into(image_profile);
@@ -102,6 +103,7 @@ public class ProfileFragment extends Fragment {
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
                 startActivity(new Intent(getActivity(), StartActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+                getActivity().finish();
             }
         });
 

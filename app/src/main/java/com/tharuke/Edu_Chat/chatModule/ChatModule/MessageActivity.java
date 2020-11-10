@@ -3,6 +3,7 @@ package com.tharuke.Edu_Chat.chatModule.ChatModule;
 import android.Manifest;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -149,18 +150,22 @@ public class MessageActivity extends AppCompatActivity {
         //share files
         btn_file_send.setOnClickListener(view -> {
             System.out.println("pdf button clicked");
-            CharSequence[] options = new CharSequence[]
+            CharSequence options[] = new CharSequence[]
                     {
                             "Images",
                             "PDF File",
                             "Ms Word File"
                     };
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            AlertDialog.Builder builder = new AlertDialog.Builder(MessageActivity.this);
             builder.setTitle("Select the File");
-
             builder.setItems(options, (dialogInterface, i) -> {
                 if (i == 0) {
                     checker = "image";
+
+                    Intent intent = new Intent();
+                    intent.setAction(Intent.ACTION_GET_CONTENT);
+                    intent.setType("image/*");
+                    startActivityForResult(intent.createChooser(intent, "Selece Image"), 438);
 
                 }
                 if (i == 1) {
@@ -170,6 +175,8 @@ public class MessageActivity extends AppCompatActivity {
                     checker = "docx";
                 }
             });
+            builder.show();
+
         });
 
 
@@ -230,6 +237,7 @@ public class MessageActivity extends AppCompatActivity {
         hashMap.put("receiver", receiver);
         hashMap.put("message", message);
         hashMap.put("isseen", false);
+        hashMap.put("type", "msg");
 
         reference.child("Chats").push().setValue(hashMap);
 
@@ -291,36 +299,30 @@ public class MessageActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         try {
-            if (requestCode == LAUNCH_MAIN_ACTIVITY) {
-                String result = data.getStringExtra("emojiString");
-                text_send.setText(result);
-            } else {
-                text_send.setText("");
-            }
-
             //share files in on activity result method
             if (requestCode == 438 && resultCode == RESULT_OK && data != null && data.getData() != null) {
                 loadingBar.setTitle("Sending File");
-                loadingBar.setMessage("Please wait,We are sending that file..");
+                loadingBar.setMessage("Please wait,Sending that file..");
                 loadingBar.setCanceledOnTouchOutside(false);
                 loadingBar.show();
 
                 fileUri = data.getData();
 
                 if (!checker.equals("image")) {
+                    //Todo : write pdf file send method
 
+                } else {
+                    System.out.println("Image checke id ====> " + checker);
+                    StorageReference storageReference = FirebaseStorage.getInstance().getReference("Image_Files");
 
-                } else if (checker.equals("image")) {
-                    StorageReference storageReference = FirebaseStorage.getInstance().getReference().child("Image File");
+                    final String userid = intent.getStringExtra("userid");
+                    fuser = FirebaseAuth.getInstance().getCurrentUser();
 
-                    final String messageSenderRef = "Messages/" + messageSenderID + "/" + messageReceiverID;
-                    final String messageReceiverRef = "Messages/" + messageReceiverID + "/" + messageSenderID;
+//                    DatabaseReference userMessageKeyRef = RootRef.child("Chats").push();
 
-                    DatabaseReference userMessageKeyRef = RootRef.child("Message")
-                            .child(messageSenderID).child(messageReceiverID).push();
-
-                    final String messagePushID = userMessageKeyRef.getKey();
-                    final StorageReference filePath = storageReference.child(messagePushID + "." + "jpg");
+//                    final String messagePushID = userMessageKeyRef.getKey();
+//                    System.out.println("User key ====> " + messagePushID);
+                    final StorageReference filePath = storageReference.child(System.currentTimeMillis() + "." + "jpg");
                     uploadTask = filePath.putFile(fileUri);
 
                     uploadTask.continueWithTask(new Continuation() {
@@ -336,45 +338,36 @@ public class MessageActivity extends AppCompatActivity {
                             Uri downloadUrl = task.getResult();
                             myUrl = downloadUrl.toString();
 
-                            Map messageTextBody = new HashMap();
-                            messageTextBody.put("message", myUrl);
-                            messageTextBody.put("name", fileUri.getLastPathSegment());
-                            messageTextBody.put("type", checker);
-                            messageTextBody.put("sender", messageSenderID);
-                            messageTextBody.put("receiver", messageReceiverID);
-                            messageTextBody.put("messageID", messagePushID);
+                            RootRef = FirebaseDatabase.getInstance().getReference("Chats");
 
-                            messageTextBody.put("isseen", false);
+                            HashMap<String, Object> hashMap = new HashMap<>();
+                            hashMap.put("sender", fuser.getUid());
+                            hashMap.put("receiver", userid);
+                            hashMap.put("message", myUrl);
+                            hashMap.put("isseen", false);
+                            hashMap.put("type" , checker);
 
-//                                    messageTextBody.put("puttime", saveCurrentTime);
-//                                    messageTextBody.put("date", saveCurrentDate);
+//                            reference.child("Chats").push().setValue(hashMap);
 
+                            RootRef.push().setValue(hashMap).addOnCompleteListener((task1)->{
+                                if (task1.isSuccessful()) {
+                                    loadingBar.dismiss();
+                                    Toast.makeText(MessageActivity.this, "Message sent Successfuly.", Toast.LENGTH_SHORT).show();
+                                } else {
+                                    loadingBar.dismiss();
+                                    Toast.makeText(MessageActivity.this, "Error", Toast.LENGTH_SHORT).show();
+                                }
+                                text_send.setText("");
+                            });
 
-                            Map mesageBodyDetails = new HashMap();
-                            mesageBodyDetails.put(messageSenderRef + "/" + messagePushID, messageTextBody);
-                            mesageBodyDetails.put(messageReceiverRef + "/" + messagePushID, messageTextBody);
-
-                            RootRef.updateChildren(mesageBodyDetails).addOnCompleteListener((task1)->{
-                            if (task1.isSuccessful()) {
-                                loadingBar.dismiss();
-                                Toast.makeText(MessageActivity.this, "Message sent Successfuly.", Toast.LENGTH_SHORT).show();
-                            } else {
-                                loadingBar.dismiss();
-                                Toast.makeText(MessageActivity.this, "Error", Toast.LENGTH_SHORT).show();
-                            }
-                            text_send.setText("");
-                                    });
                         }
 
                     });
-                } else {
-                    Toast.makeText(this, "Nothing selected, Error.", Toast.LENGTH_SHORT).show();
                 }
 
         }
 
-    } catch(
-    Exception e)
+    } catch(Exception e)
 
     {
         Toast.makeText(this, "Something went wrong", Toast.LENGTH_LONG).show();
