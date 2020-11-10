@@ -71,7 +71,8 @@
             android:id="@+id/btn_register"
             android:text="register"
             android:background="@drawable/button_background"
-            android:textColor="@color/secondaryTextColor" />
+            android:textColor="@color/secondaryTextColor"
+            />
         />
 
 
