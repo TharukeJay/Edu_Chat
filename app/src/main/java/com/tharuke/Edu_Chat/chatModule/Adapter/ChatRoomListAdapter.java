@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.tharuke.Edu_Chat.R;
 import com.tharuke.Edu_Chat.chatModule.Model.Chat;
@@ -52,11 +53,11 @@ public class ChatRoomListAdapter extends RecyclerView.Adapter<ChatRoomListAdapte
 
         viewHolder.show_message.setText(chatRoomList.getMessage());
 
-        if(imageurl.equals("default")){
-            viewHolder.profile_image.setImageResource(R.mipmap.ic_launcher);
-        }else{
-            Glide.with(mContext).load(imageurl).into(viewHolder.profile_image);
-        }
+//        if(imageurl.equals("default")){
+//            viewHolder.profile_image.setImageResource(R.mipmap.ic_launcher);
+//        }else{
+//            Glide.with(mContext).load(imageurl).into(viewHolder.profile_image);
+//        }
     }
 
     @Override
@@ -68,16 +69,26 @@ public class ChatRoomListAdapter extends RecyclerView.Adapter<ChatRoomListAdapte
     public class ViewHolder extends RecyclerView.ViewHolder{
 
         public TextView show_message;
-        public ImageView profile_image;
+//        public ImageView profile_image;
 
 
         public ViewHolder(View itemView){
             super(itemView);
 
             show_message = itemView.findViewById(R.id.show_message);
-            profile_image = itemView.findViewById(R.id.profile_image);
+//            profile_image = itemView.findViewById(R.id.profile_image);
 
 
+        }
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        fuser = FirebaseAuth.getInstance().getCurrentUser();
+        if(mChat.get(position).getSender().equals(fuser.getUid())){
+            return MSG_TYPE_RIGHT;
+        }else {
+            return MSG_TYPE_LEFT;
         }
     }
 }
