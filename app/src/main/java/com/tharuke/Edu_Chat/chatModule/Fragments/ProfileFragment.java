@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.MimeTypeMap;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,6 +32,8 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.StorageTask;
 import com.google.firebase.storage.UploadTask;
 import com.tharuke.Edu_Chat.R;
+import com.tharuke.Edu_Chat.chatModule.ChatModule.MainActivity;
+import com.tharuke.Edu_Chat.chatModule.ChatModule.StartActivity;
 import com.tharuke.Edu_Chat.chatModule.Model.User;
 
 import java.util.HashMap;
@@ -46,6 +49,7 @@ public class ProfileFragment extends Fragment {
 
     DatabaseReference reference;
     FirebaseUser fuser;
+    Button logout_btn;
 
     StorageReference storageReference;
     private static final int IMAGE_REQUEST = 1;
@@ -59,6 +63,7 @@ public class ProfileFragment extends Fragment {
 
         image_profile = view.findViewById(R.id.profile_image);
         username = view.findViewById(R.id.username);
+        logout_btn = view.findViewById(R.id.logout_btn);
 
         storageReference = FirebaseStorage.getInstance().getReference("uploads");
 
@@ -87,6 +92,14 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 openImage();
+            }
+        });
+
+        logout_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(getActivity(), StartActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
             }
         });
 

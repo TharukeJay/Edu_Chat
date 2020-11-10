@@ -343,6 +343,9 @@ public class MessageActivity extends AppCompatActivity {
                             messageTextBody.put("sender", messageSenderID);
                             messageTextBody.put("receiver", messageReceiverID);
                             messageTextBody.put("messageID", messagePushID);
+
+                            messageTextBody.put("isseen", false);
+
 //                                    messageTextBody.put("puttime", saveCurrentTime);
 //                                    messageTextBody.put("date", saveCurrentDate);
 
