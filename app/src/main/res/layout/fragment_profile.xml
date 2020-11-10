@@ -53,6 +53,8 @@
         android:id="@+id/edit_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#614051"
+        android:textColor="#ffff"
         android:layout_marginTop="420dp"
         android:text="Edit Profile" />
 
@@ -60,6 +62,8 @@
         android:id="@+id/logout_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#614051"
+        android:textColor="#ffff"
         android:layout_marginTop="490dp"
         android:text="LogOut" />
 
