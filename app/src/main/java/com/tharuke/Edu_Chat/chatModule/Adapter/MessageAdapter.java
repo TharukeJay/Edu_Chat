@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.squareup.picasso.Picasso;
 import com.tharuke.Edu_Chat.R;
 import com.tharuke.Edu_Chat.chatModule.Model.Chat;
 
@@ -51,7 +52,15 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
 
         Chat chat = mChat.get(position);
 
-        holder.show_message.setText(chat.getMessage());
+        if (chat.getType().equals("msg")) {
+            holder.show_message.setText(chat.getMessage());
+            holder.show_img_message.setVisibility(View.GONE);
+        } else {
+            System.out.println("message url ===> " + chat.getMessage());
+            holder.show_message.setVisibility(View.GONE);
+            Picasso.with(mContext).load(chat.getMessage()).into(holder.show_img_message);
+        }
+
 
         if(imageurl.equals("default")){
             holder.profile_image.setImageResource(R.mipmap.ic_launcher);
@@ -83,7 +92,7 @@ public int getItemCount() {
 public class ViewHolder extends RecyclerView.ViewHolder{
 
     public TextView show_message;
-    public ImageView profile_image;
+    public ImageView profile_image, show_img_message;
 
     public TextView txt_seen;
 
@@ -92,6 +101,7 @@ public class ViewHolder extends RecyclerView.ViewHolder{
         super(itemView);
 
         show_message = itemView.findViewById(R.id.show_message);
+        show_img_message =  itemView.findViewById(R.id.show_img_message);
         profile_image = itemView.findViewById(R.id.profile_image);
         txt_seen = itemView.findViewById(R.id.txt_seen);
 

@@ -15,6 +15,18 @@
         android:layout_height="wrap_content"
         android:id="@+id/profile_image"
         android:visibility="gone"/>
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:background="@drawable/background_right"
+            android:text="hello"
+            android:id="@+id/show_img_message"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:textSize="18sp"
+            android:layout_marginTop="2dp"
+            android:textColor="@color/secondaryTextColor"
+            android:padding="8dp"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
