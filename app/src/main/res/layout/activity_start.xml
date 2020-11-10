@@ -20,8 +20,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
-        android:background="@color/colorPrimaryDark"
-        android:textColor="@color/secondaryTextColor"
+        android:background="#614051"
+        android:textColor="#ffff"
         android:id="@+id/login"
         android:text="login"/>
 
@@ -29,8 +29,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/register"
-        android:background="@color/colorPrimaryDark"
-        android:textColor="#fff"
+        android:background="#614051"
+        android:textColor="#ffff"
         android:layout_marginTop="10dp"
         android:text="register"/>
 
