@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.squareup.picasso.Picasso;
 import com.tharuke.Edu_Chat.R;
 import com.tharuke.Edu_Chat.chatModule.ChatModule.ChatRoomActivity;
 import com.tharuke.Edu_Chat.chatModule.ChatModule.MessageActivity;
@@ -45,7 +46,7 @@ public class ChatRoomAdapter extends RecyclerView.Adapter<ChatRoomAdapter.ViewHo
         if(chatList.getThumbnail().equals("default")){
             holder.profile_image.setImageResource(R.mipmap.ic_launcher);
         }else {
-            Glide.with(mContext).load(storageRef).into(holder.profile_image);
+            Picasso.with(mContext).load(chatList.getThumbnail()).into(holder.profile_image);
         }
 
         holder.itemView.setOnClickListener(new View.OnClickListener(){
