@@ -17,7 +17,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".chatModule.ChatModule.ChatRoomActivity"></activity>
+        <activity android:name=".chatModule.ChatModule.ProfileUpdate"></activity>
+        <activity android:name=".chatModule.ChatModule.ChatRoomActivity" />
         <activity android:name=".chatModule.Fragments.ChatRoomFragment" />
         <activity
             android:name=".chatModule.ChatModule.MainActivity"

@@ -33,6 +33,7 @@ import com.google.firebase.storage.StorageTask;
 import com.google.firebase.storage.UploadTask;
 import com.tharuke.Edu_Chat.R;
 import com.tharuke.Edu_Chat.chatModule.ChatModule.MainActivity;
+import com.tharuke.Edu_Chat.chatModule.ChatModule.ProfileUpdate;
 import com.tharuke.Edu_Chat.chatModule.ChatModule.StartActivity;
 import com.tharuke.Edu_Chat.chatModule.Model.User;
 
@@ -49,7 +50,7 @@ public class ProfileFragment extends Fragment {
 
     DatabaseReference reference;
     FirebaseUser fuser;
-    Button logout_btn;
+    Button logout_btn,edit_btn;
 
     StorageReference storageReference;
     private static final int IMAGE_REQUEST = 1;
@@ -64,6 +65,7 @@ public class ProfileFragment extends Fragment {
         image_profile = view.findViewById(R.id.profile_image);
         username = view.findViewById(R.id.username);
         logout_btn = view.findViewById(R.id.logout_btn);
+        edit_btn = view.findViewById(R.id.edit_btn);
 
         storageReference = FirebaseStorage.getInstance().getReference("uploads");
 
@@ -100,6 +102,13 @@ public class ProfileFragment extends Fragment {
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
                 startActivity(new Intent(getActivity(), StartActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+            }
+        });
+
+        edit_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), ProfileUpdate.class));
             }
         });
 

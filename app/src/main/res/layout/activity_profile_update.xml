@@ -14,67 +14,95 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp"
+        android:layout_below="@+id/toolbar"
         android:gravity="center_horizontal"
-        android:layout_below="@+id/toolbar">
+        android:orientation="vertical"
+        android:padding="16dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="EduChat"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="50dp"
+            android:text="Edit Profile"
             android:textColor="@color/secondaryTextColor"
             android:textSize="50sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <com.rengwuxian.materialedittext.MaterialEditText
             android:id="@+id/username"
-            android:drawableLeft="@drawable/user_profile1"
-            android:drawablePadding="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:hint="Username"
+            android:drawableLeft="@drawable/user_profile1"
+            android:drawablePadding="10dp"
             android:drawableTint="@color/secondaryTextColor"
+            android:hint="Username"
             android:singleLine="true"
             android:textColor="@color/secondaryTextColor"
             android:textColorHint="@color/secondaryTextColor"
-            app:met_floatingLabel="normal"
-            />
+            app:met_floatingLabel="normal" />
 
 
         <com.rengwuxian.materialedittext.MaterialEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:id="@+id/regEmail"
-            android:drawableLeft="@drawable/user_profile1"
-            android:inputType="textEmailAddress"
-            android:layout_marginTop="10dp"
-            android:drawableTint="@color/secondaryTextColor"
-            android:hint="Email"/>
-
-        <com.rengwuxian.materialedittext.MaterialEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/lock1"
-            android:id="@+id/password"
-            android:inputType="textPassword"
             android:layout_marginTop="10dp"
-            app:met_floatingLabel="normal"
-            android:hint="Password"/>
+            android:drawableLeft="@drawable/user_profile1"
+            android:drawableTint="@color/secondaryTextColor"
+            android:hint="Email"
+            android:inputType="textEmailAddress" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:drawableLeft="@drawable/lock1"
+            android:hint="Password"
+            android:inputType="textPassword"
+            app:met_floatingLabel="normal" />
+
+        <com.rengwuxian.materialedittext.MaterialMultiAutoCompleteTextView
+            android:id="@+id/textView9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Gender"
+            android:textColor="@color/secondaryTextColor"
+            android:textStyle="bold"
+            app:met_floatingLabel="normal" />
 
         <Button
+            android:id="@+id/btn_update"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:id="@+id/btn_register"
-            android:text="register"
+            android:layout_marginTop="180dp"
             android:background="@drawable/button_background"
+            android:text="Update"
             android:textColor="@color/secondaryTextColor" />
-        />
-
 
     </LinearLayout>
+    <RadioButton
+        android:id="@+id/radioButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="360dp"
+        android:text="Male" />
 
+    <RadioButton
+        android:id="@+id/radioButton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="360dp"
+        android:text="Female" />
+    <RadioButton
+        android:id="@+id/radioButton4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="300dp"
+        android:layout_marginTop="360dp"
+        android:text="Other" />
 </RelativeLayout>
